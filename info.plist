@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.likewinter.genius</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>3785D11E-E8C3-4BBA-A272-7C66952B87EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>65111E7E-7547-47B0-A8CD-2A0ABF4B4861</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>48A80EC7-DF79-43D2-9E51-B6F35FA29143</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F2A73F4C-0A9E-40D3-9F63-946EBD03D76E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F2A73F4C-0A9E-40D3-9F63-946EBD03D76E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3785D11E-E8C3-4BBA-A272-7C66952B87EE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Anton Orlov</string>
+	<key>description</key>
+	<string>Show current iTunes song in Genius</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Genius</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+	const Chrome = Application('Google Chrome')
+	Chrome.windows[0].tabs.push(Chrome.Tab({url: argv}))
+	Chrome.activate()
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>65111E7E-7547-47B0-A8CD-2A0ABF4B4861</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>genius</string>
+				<key>subtext</key>
+				<string>Opens new tab in Chrome Browser</string>
+				<key>text</key>
+				<string>Show current iTunes song lyrics in Genius</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>48A80EC7-DF79-43D2-9E51-B6F35FA29143</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+	const track = Application('iTunes').currentTrack
+
+	return `${track.artist()} ${track.name()}`;
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F2A73F4C-0A9E-40D3-9F63-946EBD03D76E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>curl -G -s http://genius.com/search --data-urlencode "q='$1'" | grep song_link | head -1 | sed 's/.*href="\([^"]*\)".*/\1/' | cat</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3785D11E-E8C3-4BBA-A272-7C66952B87EE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Used:
+ - osascript (js)
+ - shell utilities: curl, grep, sed, cat, head</string>
+	<key>uidata</key>
+	<dict>
+		<key>3785D11E-E8C3-4BBA-A272-7C66952B87EE</key>
+		<dict>
+			<key>note</key>
+			<string>Get first link from Genius search results</string>
+			<key>xpos</key>
+			<integer>370</integer>
+			<key>ypos</key>
+			<integer>20</integer>
+		</dict>
+		<key>48A80EC7-DF79-43D2-9E51-B6F35FA29143</key>
+		<dict>
+			<key>xpos</key>
+			<integer>20</integer>
+			<key>ypos</key>
+			<integer>20</integer>
+		</dict>
+		<key>65111E7E-7547-47B0-A8CD-2A0ABF4B4861</key>
+		<dict>
+			<key>note</key>
+			<string>Open new tab in Chrome with Genius Lyrics page</string>
+			<key>xpos</key>
+			<integer>550</integer>
+			<key>ypos</key>
+			<integer>20</integer>
+		</dict>
+		<key>F2A73F4C-0A9E-40D3-9F63-946EBD03D76E</key>
+		<dict>
+			<key>note</key>
+			<string>Get current playing track from iTunes</string>
+			<key>xpos</key>
+			<integer>190</integer>
+			<key>ypos</key>
+			<integer>20</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>0.2</string>
+	<key>webaddress</key>
+	<string>pinked.ru</string>
+</dict>
+</plist>
