@@ -77,7 +77,13 @@
 				<integer>68</integer>
 				<key>script</key>
 				<string>function run(argv) {
-	const player = Application('Spotify').playerState() === 'playing' ? Application('Spotify') : Application('iTunes')
+	let player;
+	if (Application('Spotify').running() &amp;&amp; Application('Spotify').playerState() === 'playing') {
+		player = Application('Spotify')
+	} else if (Application('iTunes').running() &amp;&amp; Application('iTunes').playerState() === 'playing') {
+		player = Application('iTunes')
+	} else return
+
 	const track = player.currentTrack
 
 	return `${track.artist()} ${track.name()}`
@@ -104,7 +110,9 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>curl -G -s http://genius.com/search --data-urlencode "q='$1'" | grep song_link | head -1 | sed 's/.*href="\([^"]*\)".*/\1/' | xargs open</string>
+				<string>if [ -n "$1" ]; then
+	curl -G -s http://genius.com/search --data-urlencode "q='$1'" | grep song_link | head -1 | sed 's/.*href="\([^"]*\)".*/\1/' | xargs open
+fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -131,7 +139,7 @@
 			<key>note</key>
 			<string>Get first link from Genius search results</string>
 			<key>xpos</key>
-			<integer>370</integer>
+			<integer>440</integer>
 			<key>ypos</key>
 			<integer>20</integer>
 		</dict>
@@ -147,13 +155,13 @@
 			<key>note</key>
 			<string>Get current playing track from iTunes</string>
 			<key>xpos</key>
-			<integer>190</integer>
+			<integer>230</integer>
 			<key>ypos</key>
 			<integer>20</integer>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.3</string>
+	<string>0.4</string>
 	<key>webaddress</key>
 	<string>pinked.ru</string>
 </dict>
