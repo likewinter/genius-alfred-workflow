@@ -76,24 +76,13 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>function run(argv) {
-	let player;
-	if (Application('Spotify').running() &amp;&amp; Application('Spotify').playerState() === 'playing') {
-		player = Application('Spotify')
-	} else if (Application('iTunes').running() &amp;&amp; Application('iTunes').playerState() === 'playing') {
-		player = Application('iTunes')
-	} else return
-
-	const track = player.currentTrack
-
-	return `${track.artist()} ${track.name()}`
-}</string>
+				<string>on is_running(appName)	tell application "System Events" to (name of processes) contains appNameend is_runningif is_running("Spotify") then	tell application "Spotify"		if player state is playing then			return (artist of current track) &amp; " " &amp; (name of current track)		end if	end tellend ifif is_running("iTunes") then	tell application "iTunes"		if player state is playing then			return (artist of current track) &amp; " " &amp; (name of current track)		end if	end tellend ifreturn</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>6</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -161,7 +150,7 @@ fi</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.4</string>
+	<string>0.5</string>
 	<key>webaddress</key>
 	<string>pinked.ru</string>
 </dict>
