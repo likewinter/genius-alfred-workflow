@@ -74,6 +74,31 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>if [ -n "$1" ]; then
+	curl -s -G "http://genius.com/api/search/multi" --data-urlencode "q=$1" | ./parse_url | xargs open
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3785D11E-E8C3-4BBA-A272-7C66952B87EE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
 				<string>on is_running(appName)	tell application "System Events" to (name of processes) contains appNameend is_runningif is_running("Spotify") then	tell application "Spotify"		if player state is playing then			return (artist of current track) &amp; " " &amp; (name of current track)		end if	end tellend ifif is_running("iTunes") then	tell application "iTunes"		if player state is playing then			return (artist of current track) &amp; " " &amp; (name of current track)		end if	end tellend ifreturn</string>
@@ -88,31 +113,6 @@
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>F2A73F4C-0A9E-40D3-9F63-946EBD03D76E</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>if [ -n "$1" ]; then
-	curl -G -s http://genius.com/search --data-urlencode "q='$1'" | grep song_link | head -1 | sed 's/.*href="\([^"]*\)".*/\1/' | xargs open
-fi</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>3785D11E-E8C3-4BBA-A272-7C66952B87EE</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -150,7 +150,7 @@ fi</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.5</string>
+	<string>0.6</string>
 	<key>webaddress</key>
 	<string>pinked.ru</string>
 </dict>
