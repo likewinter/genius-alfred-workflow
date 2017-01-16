@@ -55,9 +55,9 @@
 				<key>keyword</key>
 				<string>genius</string>
 				<key>subtext</key>
-				<string>Opens new tab in Chrome Browser</string>
+				<string>Opens new tab in default browser</string>
 				<key>text</key>
-				<string>Show current iTunes song lyrics in Genius</string>
+				<string>Show playing song lyrics in Genius</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -101,7 +101,11 @@ fi</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>on is_running(appName)	tell application "System Events" to (name of processes) contains appNameend is_runningif is_running("Spotify") then	tell application "Spotify"		if player state is playing then			return (artist of current track) &amp; " " &amp; (name of current track)		end if	end tellend ifif is_running("iTunes") then	tell application "iTunes"		if player state is playing then			return (artist of current track) &amp; " " &amp; (name of current track)		end if	end tellend ifreturn</string>
+				<string>on is_running(appName)	tell application "System Events" to (name of processes) contains appNameend is_runningif is_running("Spotify") then	tell application "Spotify"		if player state is playing then			return (artist of current track) &amp; " " &amp; (name of current track)		end if	end tellend ifif is_running("iTunes") then	tell application "iTunes"		if player state is playing then			return (artist of current track) &amp; " " &amp; (name of current track)		end if	end tellend if
+
+if is_running("VOX") then
+	tell application "VOX"		if player state is 1 then			return artist &amp; " " &amp; track		end if	end tell
+end ifreturn</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -150,7 +154,7 @@ fi</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.6</string>
+	<string>0.7</string>
 	<key>webaddress</key>
 	<string>pinked.ru</string>
 </dict>
