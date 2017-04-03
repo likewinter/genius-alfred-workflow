@@ -1,4 +1,4 @@
-###Opens new tab in default browser with current song lyrics on Genius
+### Opens new tab in default browser with current song lyrics on Genius
 
 Supported music players:
 
@@ -6,4 +6,4 @@ Supported music players:
 * Spotify
 * [VOX](https://vox.rocks/mac-music-player)
 
-Download workflow from [latest release](https://github.com/likewinter/genius-alfred-workflow/releases/tag/latest)
+Download workflow from [latest release](https://github.com/likewinter/genius-alfred-workflow/releases/latest)
