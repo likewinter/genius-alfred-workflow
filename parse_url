@@ -1,5 +1,0 @@
-#!/usr/bin/env php
-<?php
-$json = json_decode(file_get_contents('php://stdin'));
-
-echo $json->response->sections[1]->hits[0]->result->url;

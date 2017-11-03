@@ -8,8 +8,52 @@
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
-		<key>3785D11E-E8C3-4BBA-A272-7C66952B87EE</key>
-		<array/>
+		<key>19C38D78-8300-4EA1-8224-1EAF5AE3EE8F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AFD7F020-D128-4F53-8473-269D0030CF39</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D4C3F5CC-BB1A-4AA3-9256-15B7AB2C4AF7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>ABE657FF-A64C-4399-95F5-9CBFBCED8A58</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>34DBC947-B1C2-43B6-8C20-5BB3A7232A11</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D287254D-3495-4451-879A-78886EBBA3CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>48A80EC7-DF79-43D2-9E51-B6F35FA29143</key>
 		<array>
 			<dict>
@@ -23,11 +67,76 @@
 				<false/>
 			</dict>
 		</array>
+		<key>50FBED66-48BB-496F-8116-2229DDDBBC37</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D287254D-3495-4451-879A-78886EBBA3CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>ABE657FF-A64C-4399-95F5-9CBFBCED8A58</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>34DBC947-B1C2-43B6-8C20-5BB3A7232A11</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>AFD7F020-D128-4F53-8473-269D0030CF39</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>50FBED66-48BB-496F-8116-2229DDDBBC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D4C3F5CC-BB1A-4AA3-9256-15B7AB2C4AF7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED83DF6B-2F85-41DC-B814-49AB9A43D3B2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>ED83DF6B-2F85-41DC-B814-49AB9A43D3B2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D287254D-3495-4451-879A-78886EBBA3CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>F2A73F4C-0A9E-40D3-9F63-946EBD03D76E</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>3785D11E-E8C3-4BBA-A272-7C66952B87EE</string>
+				<string>19C38D78-8300-4EA1-8224-1EAF5AE3EE8F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -47,6 +156,127 @@
 	<string>Genius</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>tell application "VOX"
+  if player state is 1 then
+    return artist &amp; " " &amp; track
+  end if
+end tell</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>50FBED66-48BB-496F-8116-2229DDDBBC37</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string></string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>VOX</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>AFD7F020-D128-4F53-8473-269D0030CF39</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>set apps to {"Spotify", "iTunes", "VOX"}repeat with appName in apps	tell application "System Events" to set isRunning to (name of processes) contains appName	if isRunning then set musicApp to appNameend repeatreturn musicApp &amp; ""</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F2A73F4C-0A9E-40D3-9F63-946EBD03D76E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>tell application "Spotify"
+  if player state is playing then
+    return (artist of current track) &amp; " " &amp; (name of current track)
+  end if
+end tell</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>ED83DF6B-2F85-41DC-B814-49AB9A43D3B2</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>if [ -n "$1" ]; then
+	./genius_lyrics "${1}"
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D287254D-3495-4451-879A-78886EBBA3CE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -71,27 +301,34 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>if [ -n "$1" ]; then
-	curl -s -G "http://genius.com/api/search/multi" --data-urlencode "q=$1" | ./parse_url | xargs open
-fi</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.transform</string>
 			<key>uid</key>
-			<string>3785D11E-E8C3-4BBA-A272-7C66952B87EE</string>
+			<string>19C38D78-8300-4EA1-8224-1EAF5AE3EE8F</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string></string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>Spotify</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>D4C3F5CC-BB1A-4AA3-9256-15B7AB2C4AF7</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -101,11 +338,7 @@ fi</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>on is_running(appName)	tell application "System Events" to (name of processes) contains appNameend is_runningif is_running("Spotify") then	tell application "Spotify"		if player state is playing then			return (artist of current track) &amp; " " &amp; (name of current track)		end if	end tellend ifif is_running("iTunes") then	tell application "iTunes"		if player state is playing then			return (artist of current track) &amp; " " &amp; (name of current track)		end if	end tellend if
-
-if is_running("VOX") then
-	tell application "VOX"		if player state is 1 then			return artist &amp; " " &amp; track		end if	end tell
-end ifreturn</string>
+				<string>tell application "iTunes"	if player state is playing then		return (artist of current track) &amp; " " &amp; (name of current track)	end ifend tell</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -116,45 +349,125 @@ end ifreturn</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>F2A73F4C-0A9E-40D3-9F63-946EBD03D76E</string>
+			<string>34DBC947-B1C2-43B6-8C20-5BB3A7232A11</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string></string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>iTunes</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>ABE657FF-A64C-4399-95F5-9CBFBCED8A58</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
 	<string>Used:
- - osascript (js)
- - shell utilities: curl, grep, sed, cat, head</string>
+ - osascript
+ - genius JSON parser written in Golang</string>
 	<key>uidata</key>
 	<dict>
-		<key>3785D11E-E8C3-4BBA-A272-7C66952B87EE</key>
+		<key>19C38D78-8300-4EA1-8224-1EAF5AE3EE8F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
+		<key>34DBC947-B1C2-43B6-8C20-5BB3A7232A11</key>
 		<dict>
 			<key>note</key>
-			<string>Get first link from Genius search results</string>
+			<string>iTunes</string>
 			<key>xpos</key>
-			<integer>440</integer>
+			<integer>650</integer>
 			<key>ypos</key>
-			<integer>20</integer>
+			<integer>320</integer>
 		</dict>
 		<key>48A80EC7-DF79-43D2-9E51-B6F35FA29143</key>
 		<dict>
 			<key>xpos</key>
-			<integer>20</integer>
+			<integer>10</integer>
 			<key>ypos</key>
-			<integer>20</integer>
+			<integer>160</integer>
+		</dict>
+		<key>50FBED66-48BB-496F-8116-2229DDDBBC37</key>
+		<dict>
+			<key>note</key>
+			<string>VOX</string>
+			<key>xpos</key>
+			<integer>650</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>ABE657FF-A64C-4399-95F5-9CBFBCED8A58</key>
+		<dict>
+			<key>note</key>
+			<string>Detect iTunes</string>
+			<key>xpos</key>
+			<integer>550</integer>
+			<key>ypos</key>
+			<integer>350</integer>
+		</dict>
+		<key>AFD7F020-D128-4F53-8473-269D0030CF39</key>
+		<dict>
+			<key>note</key>
+			<string>Detect VOX</string>
+			<key>xpos</key>
+			<integer>550</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
+		<key>D287254D-3495-4451-879A-78886EBBA3CE</key>
+		<dict>
+			<key>note</key>
+			<string>Get link and open it in browser</string>
+			<key>xpos</key>
+			<integer>870</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>D4C3F5CC-BB1A-4AA3-9256-15B7AB2C4AF7</key>
+		<dict>
+			<key>note</key>
+			<string>Detect Spotify</string>
+			<key>xpos</key>
+			<integer>550</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
+		<key>ED83DF6B-2F85-41DC-B814-49AB9A43D3B2</key>
+		<dict>
+			<key>note</key>
+			<string>Spotify</string>
+			<key>xpos</key>
+			<integer>650</integer>
+			<key>ypos</key>
+			<integer>160</integer>
 		</dict>
 		<key>F2A73F4C-0A9E-40D3-9F63-946EBD03D76E</key>
 		<dict>
 			<key>note</key>
-			<string>Get current playing track from iTunes</string>
+			<string>Get current running player</string>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>200</integer>
 			<key>ypos</key>
-			<integer>20</integer>
+			<integer>160</integer>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.7</string>
+	<string>1.0</string>
 	<key>webaddress</key>
 	<string>pinked.ru</string>
 </dict>
